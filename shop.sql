@@ -1,6 +1,5 @@
 
-CREATE DATABASE shops
-
+use shops;
 -- SQL file for creating and manipulating a simple products table
 -- DDL to create the products table
 CREATE TABLE products (

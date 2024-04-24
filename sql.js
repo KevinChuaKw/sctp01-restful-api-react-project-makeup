@@ -3,6 +3,7 @@ const { createConnection } = require('mysql2/promise');
 let connection = null;
 
 async function connectToDB(host, user, database, password) {
+    // Connect to mySQL database 
     connection = await createConnection({
         host, user, database, password
     })
