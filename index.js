@@ -3,6 +3,7 @@ const cors = require('cors');
 const { connectToDB, getConnection } = require('./sql');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const productServices = require('./productServices'); 
 require('dotenv').config();
 
 const app = express();
@@ -54,7 +55,8 @@ async function main() {
     // 2. the url itself refers to nouns (i.e objects or things)
     // 3. 
     app.get('/api/products', async function (req, res) {
-        const [products] = await connection.execute('select * from products');
+        const products = await productServices.getProducts();
+        console.log(products);
         res.json({
             products
         });
